@@ -1,0 +1,36 @@
+/* When there is two declarations of the same thing, the last one is the most important one */
+/* The blue one will be chosen */
+
+/* body {
+    background: red;
+}
+
+body {
+    background: blue;
+} */
+
+
+/* ################################################################################################################ */
+/*
+The blue color would be chosen in this example as well
+
+body {
+    background: red;
+    background: blue;
+}
+*/
+/* ################################################################################################################ */
+
+
+/* Each selector has a weight and the sum of the weights will determine which values will be selected */
+p#unique-1 {
+    color: blue;
+}
+
+.anyone {
+    color: green;
+}
+
+p {
+    color: red;
+}

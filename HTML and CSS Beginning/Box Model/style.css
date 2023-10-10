@@ -1,0 +1,31 @@
+header {
+    border: 1px solid red;
+
+    padding: 60px; /* Inner filling: space between the content and the border */
+}
+
+h1 {
+    border: 1px solid green;
+    height: 60px;
+
+    display: inline
+}
+
+p {
+    border: 1px solid blue;
+    margin: 20px; /* Outer filling: space between the element border and another element */
+
+    display: inline;
+}
+
+/* There is two types of visualizing:
+    -> Block display:  It will have the size of the parent element
+        --> It will have a line break before and after
+
+    -> Flex display: It will have a size of the content inside it
+*/
+span {
+    border: 1px solid pink;
+
+    display: block;
+}
