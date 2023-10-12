@@ -34,6 +34,7 @@ body {
 
     /* background: color image repeat position/size */
     background: var(--bg-url) no-repeat top center/cover; /* short hand */
+    height: 100vh;
 }
 
 body * {
@@ -42,7 +43,8 @@ body * {
 }
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     /*margin: auto; /* It doesn't automatically fills the above space */
     margin: 56px auto 0;
 
@@ -171,4 +173,16 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+
+/* Media queries */
+@media(min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
 }
