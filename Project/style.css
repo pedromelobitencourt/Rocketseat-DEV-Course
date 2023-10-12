@@ -1,3 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
 body {
-    background: black;
+    /* background: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center; /* 'y-axis', 'x-axis' 
+    background-size: cover; If it was 'contain', it would be only in the body space */
+
+
+    /* background: color image repeat position/size */
+    background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; /* short hand */
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+#container {
+    width: 360px;
+    /*margin: auto; /* It doesn't automatically fills the above space */
+    margin: 56px auto 0;
+
+    padding-top: 56px;
+}
+
+#profile {
+    text-align: center; /* It works only for 'inline' elements */
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px; /* Usually, you don't need to define the 'height' */
+    /* margin: auto; : We can't use it with 'display: inline'*/
+}
+
+#profile p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* links */
+
+ul {
+    list-style: none;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 8px; Spacing between the inside elements */
+}
+
+ul li a {
+    border: 1px solid red;
+
+    display: flex;
+    justify-content: center; /* horizontally */
+    /* align-items: vertically */
+
+    padding: 16px 24px;
 }
