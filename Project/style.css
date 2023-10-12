@@ -5,6 +5,26 @@
     box-sizing: border-box;
 }
 
+:root { /* The same as 'html' */
+    --text-color: white; /* Anywhere I use this variable will have the color white */
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, .02);
+    --highlight-color: rgba(255, 255, 255, .2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, .02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
 body {
     /* background: url(./assets/bg-mobile.jpg);
     background-repeat: no-repeat;
@@ -13,12 +33,12 @@ body {
 
 
     /* background: color image repeat position/size */
-    background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; /* short hand */
+    background: var(--bg-url) no-repeat top center/cover; /* short hand */
 }
 
 body * {
     font-family: 'Inter', sans-serif;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 #container {
@@ -26,9 +46,10 @@ body * {
     /*margin: auto; /* It doesn't automatically fills the above space */
     margin: 56px auto 0;
 
-    padding-top: 56px;
+    padding: 0 24px;
 }
 
+/* Profile */
 #profile {
     text-align: center; /* It works only for 'inline' elements */
     padding: 24px;
@@ -46,14 +67,54 @@ body * {
     margin-top: 8px;
 }
 
-/* links */
+/* Switch */
+#switch {
+    position: relative;
+    width: 64px;
 
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 9999px;
+}
+
+/* links */
 ul {
     list-style: none;
 
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* gap: 8px; Spacing between the inside elements */
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spacing between the inside elements */
+
+    padding: 24px 0;
 }
 
 ul li a {
@@ -64,4 +125,50 @@ ul li a {
     /* align-items: vertically */
 
     padding: 16px 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px); /* Sometimes we have to add 'webkit-' before the attribute, because some browsers need it */
+
+    text-decoration: none; /* overline, underline, line-through, none */
+    font-weight: 500; /* above 400: bold */
+
+    transition: background .25s;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+    padding: 24px 0;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;
+
+    border-radius: 50%;
+
+    transition: background .2s
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
 }
